@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-sm-6">
+       <h1>Consumer Details</h1>
+       
+       {% if messeges %}
+        
+       
+       
+       {% for msg in messages %}
+         <span class="badge badge-primary">{{msg}}</span>
+       {% endfor %}
+         
+         
+         
+       {% endif %}
+         
+    </div>
+    <div class="col-sm-6">
+      <form method="post">
+        {% csrf_token %}
+        {{form|crispy}}
+        <div>
+          <button class="btn btn-primary">send</button>
+        </div>
+      </form>
+    </div>
+  </div>
+{% endblock body %}
+  

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/intro.css' %}">
+{% endblock css %}
+
+{% block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mt-5">      
+      <h2>One Platform Where You Can Lodge Your Grievances For Quick Redress</h2>
+    </div>
+    <div class="col-sm-4 mt-5">
+      <div class="card bg-light">
+        <div class="card-body">
+          <h3 class="text-center">File a Complaint </h3>
+          <br><br>
+          
+          {% if user.is_authenticated %}
+          <p> <a  id="" class="btn btn-primary btn-lg btn-block" href="{% url 'consumer' %}">
+            Enter
+          </a>
+        </p>
+        {% else %}
+        <p> <a  id="" class="btn btn-primary btn-lg btn-block" href="{% url 'signup' %}">
+          Enter
+        </a>
+      </p>  
+      {% endif %}
+    </div>
+  </div>
+</div>
+<div class="col-sm-4 mt-5">
+  <div class="card bg-light">
+    <div class="card-body">
+      <h3 class="text-center">View all Complaint</h3>
+      <br><br>
+      <p> <a  id="" class="btn btn-primary btn-lg btn-block" href="{% url 'allcomplaint' %}">
+        Enter
+      </a>
+    </p>
+    
+  </div>
+</div>
+</div>
+<div class="col-sm-4 mt-5">
+  <div class="card bg-light">
+    <div class="card-body">
+      <h3 class="text-center">Fill Feedback Form</h3>
+      <br><br>
+      <p> <a  id="" class="btn btn-primary btn-lg btn-block" href="{% url 'feedback' %}">
+        Enter
+      </a>
+    </p>        
+  </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock body %}
